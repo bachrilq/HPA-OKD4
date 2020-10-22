@@ -9,6 +9,7 @@ mkdir HPA
 cd HPA
 vim hpa-deploy.yaml
 ...
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
@@ -50,7 +51,7 @@ spec:
 ...
 
 #deploy 
-oc create -f hpa.yaml
+oc create -f hpa-deploy.yaml
 oc create -f svc.yaml
 
 #expose service
